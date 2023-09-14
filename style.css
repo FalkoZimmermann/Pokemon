@@ -35,3 +35,23 @@ header img {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.pokemon-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Stil für das Bild des Pokémon */
+.pokemon-image {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Stil für den Namen des Pokémon */
+.pokemon-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
