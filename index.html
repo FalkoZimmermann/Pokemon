@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="./img/pokeball2.jpg">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
-    <title>Document</title>
+    
+    <title>Pokedex</title>
 </head>
+
 <body onload="init()">
+    
     <header>
-        <img src="img/pokemon-ball-logo.png" alt="Pokemon Logo">
-        <h1 class="title">Pokemon Bibel</h1>
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Suche dein Pokemon">
-            <button class="search-button">Pokemon finden</button>
-        </div>
+        <div><img class="header-logo" src="img/pokemon-ball-logo.png"></div>
+        <div class="title"><h1 class="title">Pokemon Bibel</h1></div>
+        
+        <form class="search-field" onkeyup="searchForPokemon()" >
+        <input class="search-input" required placeholder="Search" type="text" id="searchfield">
+        </form>
+        
     </header>
-    <div id="pokemon-details">
-        <!-- Hier werden die Pokémon-Daten angezeigt -->
-    </div>
+
+    <div class="card-container" id="cardContainer"></div>
+    <div id="openedPokemonCard" class="d-none"></div>
+    <div class="loadbutton"><button class="glow-on-hover" onclick="loadMorePokemons()">Load more Pokemons</button></div>
+    
+    <footer class="footer">
+        &copy; Copyright 2023 Falko Zimmermann
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <div>Icons by : <a href="https://de.freepik.com/freie-ikonen" target="_blank">freepike.com</a></div>
+    
+    </footer>
+
 </body>
+
 </html>
