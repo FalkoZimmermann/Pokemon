@@ -268,19 +268,21 @@ input:hover {
     display: flex;
     justify-content: center;
 }
-
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
+.more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.more-button {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 10%;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background: linear-gradient(103deg, rgb(17, 156, 40) 0%, rgb(22, 29, 124) 25%, rgb(159, 9, 179)50%, rgb(207, 8, 8)100%);
+}
+.more-button:hover {
+    cursor: pointer;
 }
 
 footer {
@@ -291,10 +293,6 @@ footer {
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-.mbe0 {
-    margin-block-end: 0px;
 }
 
 .datenschutz{
@@ -332,10 +330,115 @@ footer {
 
 @media(max-width: 700px) {
 
-    header {
-        display: flex;
-        flex-direction: column;
+    .searchfield input {
+        height: 40px;
+        width: 120px;
+        font-size: 15px;
+        width: 100%;
     }
+
+    .headerLogo {
+
+        width: 200px;
+        margin-left: 0;
+    }
+
+    .searchfield {
+        width: 50%;
+        padding: 10px;
+    }
+    .avatar {
+
+        width: 130px;
+    left: 90px;
+    top: 1px;
+    }
+    .pokemon-card {
+        width: 300px;
+        height: 300px;
+    }
+
+    .pokemon-name {
+        font-size: 15px;
+        left: -90px;
+    top: -10px;
+    position: relative;
+    }
+
+    #pokemonNumber {
+        bottom: 45px;
+        padding-left: 130px;
+        font-size: 20px;
+    }
+
+    .pokemon-type {
+        height: 20px;
+        width: 50px;
+        font-size: 15px;
+        position: relative;
+    bottom: 120px;
+    left: -17px;
+    }
+
+    #pokemon-type {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 140px;
+    }
+    footer {
+        padding-left: 10%;
+        font-size: 14px;
+    }
+
+    .more-button {
+        font-size: 15px;
+        height: 20px;
+        width: 100px;
+    }
+
+    .big-card {
+        width: 600px;
+        height: 600px;
+        font-size: 16px;
+    }
+    
+    .big-card-name-img {
+        height: 245px;
+        margin-left: 20px;
+        margin-top: -30px;
+    }
+    .big-card-name-img img {
+        width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    }
+    .tags {
+        margin-top: 50px;
+    margin-left: 30px;
+    width: 90%;
+    }
+    #chart {
+        width: 350px !important;
+        height: 260px !important;
+        padding-left: 7px;
+    }
+    .about {
+        margin-left: 50px;
+    height: 124px;
+    width: 80%;
+    }
+    .skills{
+        height: 240px;
+    }
+}
+
+@media(max-width:600px) {
+    footer {
+        padding-left: 10%;
+    }
+}
+
+@media(max-width: 500px) {
 
     .searchfield input {
         height: 40px;
@@ -354,19 +457,22 @@ footer {
         width: 50%;
         padding: 10px;
     }
+    .avatar {
 
-    .pokemon-card {
-        width: 200px;
-        
+        width: 130px;
+    left: 90px;
+    top: 1px;
     }
-
-    .pokemon-card::before {
-        background-size: 180%;
-        ;
+    .pokemon-card {
+        width: 300px;
+        height: 300px;
     }
 
     .pokemon-name {
         font-size: 15px;
+        left: -90px;
+    top: -10px;
+    position: relative;
     }
 
     #pokemonNumber {
@@ -379,127 +485,60 @@ footer {
         height: 20px;
         width: 50px;
         font-size: 15px;
+        position: relative;
+    bottom: 120px;
+    left: -17px;
     }
 
     #pokemon-type {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         padding-top: 140px;
     }
-
-    #pokemonAvatar {
-        height: 180px;
-        bottom: 40px;
-        left: 15px;
-    }
-
     footer {
         padding-left: 10%;
         font-size: 14px;
     }
 
-    .load-button button {
+    .more-button {
         font-size: 15px;
-        height: 80px;
+        height: 20px;
         width: 100px;
     }
 
     .big-card {
-        width: 400px;
-        height: 600px;
+        width: 300px;
+        height: 300px;
         font-size: 16px;
     }
-
-    .upperSection img {
+    
+    .big-card-name-img {
         height: 245px;
-        margin-left: 135px;
-        margin-top: -50px;
+        margin-left: 20px;
+        margin-top: -30px;
     }
-
+    .big-card-name-img img {
+        width: 100px;
+    height: 100px;
+    margin-top: -200px;
+    margin-left: 75px;
+    }
+    .tags {
+        width: 90%;
+        margin-top: -70px;
+        margin-left: 18px;
+    }
     #chart {
         width: 350px !important;
         height: 260px !important;
         padding-left: 7px;
     }
-
+    .about {
+        margin-left: 20px;
+    height: 124px;
+    width: 80%;
+    }
     .skills{
         height: 240px;
-    }
-}
-
-@media(max-width:600px) {
-    footer {
-        padding-left: 10%;
-    }
-}
-
-@media(max-width: 500px) {
-
-    .pokemon-card {
-        width: 150px;
-    }
-
-    .pokemon-name {
-        margin: 5px;
-    }
-
-    #pokemonNumber {
-        bottom: 18px;
-        padding-left: 5px;
-        font-size: 16px;
-
-    }
-
-    #pokemonAvatar {
-        height: 150px;
-        bottom: 55px;
-        left: 5px;
-    }
-
-    .pokemon-type {
-        bottom: 35px;
-        height: 15px;
-        width: 45px;
-        font-size: 14px;
-
-    }
-
-
-    @media(max-width:450px){
-        .big-card {
-            width: 300px;
-            height: 530px;
-            font-size: 14px;
-        }
-        
-        .upperSection h1{
-            margin-left: 5px;
-
-        }
-        .upperSection img {
-            height: 170px;
-            margin-left: 90px;
-            margin-top: -40px;
-        }
-    
-        #chart {
-            width: 280px !important;
-            height: 200px !important;
-            padding-left: 7px;
-        }
-    
-        .skills{
-            height: 240px;
-        }
-
-        #chart {
-            width: 275px !important;
-            padding-left: 7px;
-        }
-    }
-    @media(max-width:370px) {
-        footer {
-            padding-left: 5%;
-        }
     }
 }

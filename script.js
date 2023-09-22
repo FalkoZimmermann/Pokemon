@@ -47,22 +47,11 @@ function renderPokemonCards(id, currentPokemon){
     pokemonTypeBackgroundColor(id);
     }
 }
-
-function isPageBottom() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    const bodyHeight = document.body.clientHeight;
-
-    return scrollTop + windowHeight >= bodyHeight;
+function loadMore() {
+    showedPokemonlength += 30; 
+    loadPokemon(); 
 }
-async function loadMorePokemonsOnScroll(event) {
-    if (isPageBottom()) {
-        event.preventDefault(); // Verhindert das automatische Zurückscrollen
-        showedPokemonlength += batchSize;
-        await loadPokemon(); // Stelle sicher, dass die Daten geladen werden, bevor die Seite aktualisiert wird
-    }
-}
-window.addEventListener('scroll', (event) => loadMorePokemonsOnScroll(event));
+
 
 function pokemonIdNumberShow(currentPokemon){
     let number = currentPokemon['id'];
@@ -359,8 +348,8 @@ function searchFunctionTemplate(results, id){
     return `<div class="pokemon-card " id="pokemon-card${id}" onclick="openPokemonCard(${id}+1)">
     <h2 id="pokemonName" class="pokemon-name"> ${results['name'].charAt(0).toUpperCase() + results['name'].slice(1)}</h2>
     <p id="number">${pokemonIdNumberShow(results)}</p>    
-    <img id="pokemonAvatar" src="${results['sprites']['other']['official-artwork']['front_default']}">
-    <div id="pokemon-type">${pokemonTypesSearchfield(results)}</div>
+    <img class="avatar "id="pokemonAvatar" src="${results['sprites']['other']['official-artwork']['front_default']}">
+    <div class="type" id="pokemon-type">${pokemonTypesSearchfield(results)}</div>
   </div>`;
 }
 
