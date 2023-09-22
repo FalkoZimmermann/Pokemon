@@ -1,6 +1,8 @@
 
 let allPokemonsData = [];
 let showedPokemonlength = 52;
+const batchSize = 30;
+
 const typeStyles = {
     fire: "background-image: url(img/fire.jpg);",
     grass: "background-image: url(img/grass.jpg);",
@@ -46,10 +48,21 @@ function renderPokemonCards(id, currentPokemon){
     }
 }
 
-function loadMorePokemons() {
-    showedPokemonlength += 30;
-    init();
+function isPageBottom() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const bodyHeight = document.body.clientHeight;
+
+    return scrollTop + windowHeight >= bodyHeight;
 }
+async function loadMorePokemonsOnScroll(event) {
+    if (isPageBottom()) {
+        event.preventDefault(); // Verhindert das automatische Zurückscrollen
+        showedPokemonlength += batchSize;
+        await loadPokemon(); // Stelle sicher, dass die Daten geladen werden, bevor die Seite aktualisiert wird
+    }
+}
+window.addEventListener('scroll', (event) => loadMorePokemonsOnScroll(event));
 
 function pokemonIdNumberShow(currentPokemon){
     let number = currentPokemon['id'];

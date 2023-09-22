@@ -91,6 +91,7 @@ input:hover {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 18px;
+    
 }
 
 .pokemon-card {
@@ -170,14 +171,16 @@ input:hover {
     height: 800px;
     width: 800px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(img/pokemon-ball-logo.png);
     box-shadow: rgba(255, 255, 255, 0.6) 0 15px 30px;
+    object-fit: cover;
+    background-size: 136%;
+    background-position: center;
 }
 
 .name-section {
     background-size: 115%;
     border-radius: 18px;
-
 }
 
 .big-card-name-img {
@@ -205,7 +208,10 @@ input:hover {
     display: flex;
     justify-content: space-evenly;
     color: white;
-
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 780px;
+    margin-left: 10px;
 }
 
 .tags p {
@@ -229,12 +235,19 @@ input:hover {
 }
 .stats {
     height: 208px;
-    margin-left: 80px;
+    margin-left: 85px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20%;
+    width: 664px;
+    color: burlywood;
 }
 .about {
     margin-top: 10px;
     margin-left: 80px;
     padding-right: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 600px;
+    color: burlywood;
 }
 
 
@@ -245,6 +258,8 @@ input:hover {
     overflow-y: auto;
     height: 310px;
     width: 300px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: burlywood;
 }
 
 .skills-container {
@@ -252,87 +267,6 @@ input:hover {
     margin-top: 10px;
     display: flex;
     justify-content: center;
-}
-
-.loadbutton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px 0px;
-    margin-top: auto;
-    
-}
-
-.loadbutton button {
-    background-color: crimson;
-    color: white;
-    border: none;
-    font-size: 18px;
-    height: 50px;
-    width: 50px;
-    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: 50%;
-}
-
-.loadbutton button:active {
-    background-color: crimson;
-    box-shadow: 0 0 2px black;
-    transform: translateY(2px);
-}
-
-.loadbutton button:not(:first-child) {
-    margin-top: 10px;
-}
-
-.glow-on-hover {
-
-    border: none;
-    outline: none;
-    color: #fff;
-    position: relative;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 8%;
-}
-
-.glow-on-hover:active {
-    color: white
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
-}
-
-.glow-on-hover:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 8%;
 }
 
 @keyframes glowing {
@@ -464,7 +398,7 @@ footer {
         font-size: 14px;
     }
 
-    .loadbutton button {
+    .load-button button {
         font-size: 15px;
         height: 80px;
         width: 100px;
